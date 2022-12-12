@@ -45,11 +45,7 @@ def main(file_path, cols, kind, groupby):
             cols_list += [groupby]
         data = data[cols_list]
 
-    if groupby:
-        data = data.groupby(groupby)
-    else:
-        data = ((0, data),)
-
+    data = data.groupby(groupby) if groupby else ((0, data), )
     create_plot(data, plotter=kind)
 
 

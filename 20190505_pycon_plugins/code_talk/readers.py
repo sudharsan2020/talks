@@ -1,12 +1,13 @@
 """Read data files in different formats"""
 
+
 # Standard library imports
 import json as jsonlib
 
 # Third party imports
 import pandas as pd
 
-_READERS = dict()
+_READERS = {}
 
 
 def register(func):

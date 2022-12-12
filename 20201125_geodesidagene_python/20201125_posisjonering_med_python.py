@@ -110,10 +110,7 @@ from shapely import geometry
 
 
 data = gpd.GeoDataFrame(
-    {
-        "navn": [navn for navn in punkter.keys()],
-        "lengde": [len(navn) for navn in punkter.keys()],
-    },
+    {"navn": list(punkter.keys()), "lengde": [len(navn) for navn in punkter]},
     geometry=[geometry.Point(posisjon[::-1]) for posisjon in punkter.values()],
     crs="epsg:4326",
 )

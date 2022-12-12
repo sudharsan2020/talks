@@ -1,8 +1,9 @@
 """Plot Pandas DataFrames"""
 
+
 # Third party imports
 
-_PLOTTERS = dict()
+_PLOTTERS = {}
 
 
 def register(func):

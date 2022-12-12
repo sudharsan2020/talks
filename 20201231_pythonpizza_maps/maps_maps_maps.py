@@ -93,8 +93,8 @@ from shapely import geometry
 
 data = gpd.GeoDataFrame(
     {
-        "name": [name for name in locations.keys()],
-        "size": [len(name) for name in locations.keys()],
+        "name": list(locations.keys()),
+        "size": [len(name) for name in locations],
     },
     geometry=[geometry.Point(latlon[::-1]) for latlon in locations.values()],
     crs="epsg:4326",
